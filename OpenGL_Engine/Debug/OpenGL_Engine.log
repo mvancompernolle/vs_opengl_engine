@@ -1,26 +1,36 @@
-﻿Build started 8/9/2015 3:54:29 PM.
-     1>Project "C:\Users\Matt\Documents\Visual Studio 2013\Projects\OpenGL_Engine\OpenGL_Engine\OpenGL_Engine.vcxproj" on node 2 (Build target(s)).
+﻿Build started 8/19/2015 7:24:48 PM.
+     1>Project "C:\Users\Matt\documents\visual studio 2013\Projects\OpenGL_Engine\OpenGL_Engine\OpenGL_Engine.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Model.cpp
-         Model.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Graphics.cpp
+         Graphics.cpp
+     1>c:\users\matt\documents\visual studio 2013\projects\opengl_engine\opengl_engine\graphics.cpp(25): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\matt\documents\visual studio 2013\projects\opengl_engine\opengl_engine\graphics.cpp(43): warning C4244: 'argument' : conversion from 'float' to 'GLsizei', possible loss of data
+     1>c:\users\matt\documents\visual studio 2013\projects\opengl_engine\opengl_engine\graphics.cpp(150): warning C4018: '<' : signed/unsigned mismatch
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Matt\Documents\Visual Studio 2013\Projects\OpenGL_Engine\Debug\OpenGL_Engine.exe" /INCREMENTAL /NOLOGO assimpd.lib opengl32.lib glfw3.lib glew32s.lib FreeImage.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Matt\Documents\Visual Studio 2013\Projects\OpenGL_Engine\Debug\OpenGL_Engine.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Matt\Documents\Visual Studio 2013\Projects\OpenGL_Engine\Debug\OpenGL_Engine.lib" /MACHINE:X86 Debug\OpenGL_Engine.res
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Matt\documents\visual studio 2013\Projects\OpenGL_Engine\Debug\OpenGL_Engine.exe" /INCREMENTAL /NOLOGO assimp.lib opengl32.lib glfw3.lib glew32s.lib FreeImage.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Matt\documents\visual studio 2013\Projects\OpenGL_Engine\Debug\OpenGL_Engine.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Matt\documents\visual studio 2013\Projects\OpenGL_Engine\Debug\OpenGL_Engine.lib" /MACHINE:X86 Debug\OpenGL_Engine.res
          Debug\Box.obj
          Debug\Camera.obj
          Debug\Engine.obj
          Debug\Entity.obj
+         Debug\GBuffer.obj
          Debug\Graphics.obj
          Debug\Input.obj
+         Debug\LightingManager.obj
          Debug\main.obj
          Debug\Mesh.obj
          Debug\Model.obj
          Debug\Program.obj
          Debug\Program2D.obj
+         Debug\ProgramDirLight.obj
+         Debug\ProgramGeometry.obj
+         Debug\ProgramLight.obj
          Debug\ProgramModel.obj
+         Debug\ProgramPointLight.obj
+         Debug\ProgramSpotLight.obj
          Debug\Texture.obj
-         OpenGL_Engine.vcxproj -> C:\Users\Matt\Documents\Visual Studio 2013\Projects\OpenGL_Engine\Debug\OpenGL_Engine.exe
-     1>Done Building Project "C:\Users\Matt\Documents\Visual Studio 2013\Projects\OpenGL_Engine\OpenGL_Engine\OpenGL_Engine.vcxproj" (Build target(s)).
+         OpenGL_Engine.vcxproj -> C:\Users\Matt\documents\visual studio 2013\Projects\OpenGL_Engine\Debug\OpenGL_Engine.exe
+     1>Done Building Project "C:\Users\Matt\documents\visual studio 2013\Projects\OpenGL_Engine\OpenGL_Engine\OpenGL_Engine.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.10
+Time Elapsed 00:00:01.15

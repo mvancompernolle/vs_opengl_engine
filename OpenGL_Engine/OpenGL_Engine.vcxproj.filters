@@ -11,7 +11,7 @@
     </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+      <Extensions>mtl;obj;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="shaders">
       <UniqueIdentifier>{10779686-4010-4cec-91dc-d0de5acb1bc2}</UniqueIdentifier>
@@ -30,9 +30,11 @@
     </Filter>
     <Filter Include="assets">
       <UniqueIdentifier>{df3be0c1-dc64-4368-b0f0-37d080342a3d}</UniqueIdentifier>
+      <Extensions>png;</Extensions>
     </Filter>
     <Filter Include="assets\textures">
       <UniqueIdentifier>{c29128fe-2a9d-4c5b-a6ac-1d2e3ca0b405}</UniqueIdentifier>
+      <Extensions>png;</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -72,8 +74,29 @@
     <ClCompile Include="Model.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProgramModel.cpp">
+    <ClCompile Include="GBuffer.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LightingManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgramGeometry.cpp">
+      <Filter>Source Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgramModel.cpp">
+      <Filter>Source Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgramDirLight.cpp">
+      <Filter>Source Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgramLight.cpp">
+      <Filter>Source Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgramPointLight.cpp">
+      <Filter>Source Files\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgramSpotLight.cpp">
+      <Filter>Source Files\programs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -116,8 +139,32 @@
     <ClInclude Include="Model.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProgramModel.h">
+    <ClInclude Include="GBuffer.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Lights.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LightingManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgramGeometry.h">
+      <Filter>Header Files\programs</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgramModel.h">
+      <Filter>Header Files\programs</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgramDirLight.h">
+      <Filter>Header Files\programs</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgramLight.h">
+      <Filter>Header Files\programs</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgramPointLight.h">
+      <Filter>Header Files\programs</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgramSpotLight.h">
+      <Filter>Header Files\programs</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +185,24 @@
       <Filter>shaders</Filter>
     </None>
     <None Include="model.vs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="geometry.vs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="geometry.fs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="light.vs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="dirLight.fs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="pointLight.fs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="spotLight.fs">
       <Filter>shaders</Filter>
     </None>
   </ItemGroup>

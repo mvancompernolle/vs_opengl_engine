@@ -6,6 +6,7 @@
 class ProgramModel : public Program {
 public:
 	ProgramModel();
+	void init();
 	virtual ~ProgramModel();
 
 private:

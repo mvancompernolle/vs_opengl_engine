@@ -14,7 +14,7 @@
 class Model {
 public:
 	/*  Functions   */
-	Model(GLchar* path);
+	Model(GLchar* path, bool defaultTexture = true);
 	void render(Program program);
 private:
 	/*  Functions   */
@@ -27,6 +27,7 @@ private:
 	/*  Model Data  */
 	std::vector<Mesh> meshes;
 	std::string directory;
+	bool defaultTexture;
 
 	static std::vector<Texture> texturesLoaded;
 };

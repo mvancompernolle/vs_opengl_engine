@@ -6,8 +6,9 @@
 
 std::vector<Texture> Model::texturesLoaded;
 
-Model::Model(GLchar* path) {
+Model::Model(GLchar* path, bool defaultTexture) {
 	this->loadModel(path);
+	this->defaultTexture = defaultTexture;
 }
 
 void Model::render(Program program) {
@@ -95,14 +96,35 @@ Mesh Model::processMesh(aiMesh* mesh, const aiScene* scene) {
 
 std::vector<Texture> Model::loadMaterialTextures(aiMaterial* mat, aiTextureType type, std::string typeName) {
 	std::vector<Texture> textures;
-	for (GLuint i = 0; i < mat->GetTextureCount(type); i++) {
-		aiString str;
-		mat->GetTexture(type, i, &str);
-		GLboolean skip = false;
+	aiString str;
+	GLboolean skip = false;
 
-		// check to see if texture has already been loaded
+	if (mat->GetTextureCount(type) > 0) {
+		for (GLuint i = 0; i < mat->GetTextureCount(type); i++) {
+			mat->GetTexture(type, i, &str);
+			skip = false;
+
+			// check to see if texture has already been loaded
+			for (GLuint j = 0; j < texturesLoaded.size(); j++) {
+				if (texturesLoaded[j].fileName == str.C_Str()) {
+					textures.push_back(texturesLoaded[j]);
+					skip = true;
+					break;
+				}
+			}
+			// if texture hasn't been loaded already, load it
+			if (!skip) {
+				//std::cout << "loading new texture: " << str.C_Str() << std::endl;
+				Texture texture(str.C_Str(), GL_TEXTURE_2D, typeName);
+				textures.push_back(texture);
+				texturesLoaded.push_back(texture);
+			}
+		}
+	}
+	else if(defaultTexture){
+		// check to see if default texture has already been loaded
 		for (GLuint j = 0; j < texturesLoaded.size(); j++) {
-			if (texturesLoaded[j].fileName == str.C_Str()) {
+			if (texturesLoaded[j].fileName == "default.png") {
 				textures.push_back(texturesLoaded[j]);
 				skip = true;
 				break;
@@ -110,8 +132,8 @@ std::vector<Texture> Model::loadMaterialTextures(aiMaterial* mat, aiTextureType 
 		}
 		// if texture hasn't been loaded already, load it
 		if (!skip) {
-			std::cout << "loading new texture: " << str.C_Str() << std::endl;
-			Texture texture(str.C_Str(), GL_TEXTURE_2D, typeName);
+			//std::cout << "loading new texture: default.png" << std::endl;
+			Texture texture("default.png", GL_TEXTURE_2D, typeName);
 			textures.push_back(texture);
 			texturesLoaded.push_back(texture);
 		}

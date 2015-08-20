@@ -6,6 +6,7 @@
 class Program2D : public Program {
 public:
 	Program2D();
+	void init();
 	virtual ~Program2D();
 
 private:

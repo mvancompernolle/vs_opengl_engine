@@ -24,7 +24,6 @@ Texture::Texture(const std::string& fileName, GLenum target, std::string type) :
 		//glTexParameterf(target, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 
 		if (target == GL_TEXTURE_2D) {
-			std::cout << "here" << std::endl;
 			glTexImage2D(target, 0, GL_RGBA, image.getWidth(), image.getHeight(),
 				0, GL_BGRA, GL_UNSIGNED_BYTE, (void*)image.accessPixels());
 		}

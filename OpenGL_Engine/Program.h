@@ -7,15 +7,17 @@
 #include <glm/glm.hpp>
 
 #include <GL/glew.h>
-#include <GL/gl.h>
+#include <GLFW/glfw3.h>
 
 class Program {
 public:
 	Program();
 	virtual ~Program();
+	virtual void init() {}
 
 	void bind();
 	void unbind();
+	bool checkLocations();
 
 	GLint getLocation(const std::string& key);
 
@@ -32,6 +34,7 @@ protected:
 	static GLuint loadShader(const char* fileName, GLenum shaderType);
 	void linkProgram();
 
+	std::string name;
 	GLuint program;
 	GLuint shaders[3];
 	std::map<std::string, GLint> locations;

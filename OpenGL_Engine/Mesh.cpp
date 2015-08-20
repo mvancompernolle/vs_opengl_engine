@@ -14,6 +14,7 @@ void Mesh::render(Program program) {
 	// Bind appropriate textures
 	GLuint diffuseNr = 1;
 	GLuint specularNr = 1;
+
 	for (GLuint i = 0; i < this->textures.size(); i++) {
 		// Retrieve texture number (the N in diffuse_textureN)
 		std::stringstream ss;

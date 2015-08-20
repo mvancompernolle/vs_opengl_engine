@@ -1,13 +1,12 @@
 #define GLM_FORCE_RADIANS
 
-#include "Program.h"
 #include "Engine.h"
+#include "Program.h"
 #include <glm/gtc/type_ptr.hpp>
 #include <iostream>
 #include <fstream>
 
 Program::Program() {
-	program = glCreateProgram();
 }
 
 Program::~Program() {
@@ -20,6 +19,28 @@ void Program::bind() {
 
 void Program::unbind() {
 	glUseProgram(0);
+}
+
+bool Program::checkLocations() {
+	bool allFound = true;
+	std::vector<std::string> notFound;
+
+	std::map<std::string, GLint>::iterator it;
+	for (it = locations.begin(); it != locations.end(); it++) {
+		if (it->second == -1) {
+			notFound.push_back(it->first);
+			allFound = false;
+		}
+	}
+
+	if (!allFound) {
+		std::cout << "Program: " << name << std::endl;
+		for (int i = 0; i < notFound.size(); i++) {
+			std::cout << notFound[i] << " not found." << std::endl;
+		}
+	}
+
+	return allFound;
 }
 
 GLint Program::getLocation(const std::string& key) {
